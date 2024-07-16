@@ -46,3 +46,67 @@ Welcome to the Railway Management System API, a powerful backend solution design
    git clone <repository_url>
    cd Itctc_API
 
+
+# Install Dependencies
+
+bash
+npm install
+Database Setup
+bash
+
+# Create a MySQL database
+# Configure database connection details in a .env file:
+cat << EOF > .env
+DATABASE_HOST=localhost
+DATABASE_USER=root
+DATABASE_PASS=your_mysql_password
+DATABASE_NAME=irctc
+EOF
+
+# Run database migrations
+npx knex migrate:latest
+Environment Variables
+bash
+
+# Create a .env file in the root directory with the following variables:
+cat << EOF > .env
+DATABASE_HOST=localhost
+DATABASE_USER=username
+DATABASE_PASS=your_mysql_password
+DATABASE_NAME=irctc
+ACCESS_TOKEN_SECRET=your_access_token_secret
+API_KEY=your_api_key
+EOF
+Start the Server
+bash
+
+npm start
+The server should now be running on http://localhost:3000.
+
+API Endpoints
+bash
+
+# POST /register: Create a new user account.
+# POST /login: Authenticate and receive a JWT token.
+# POST /addtrain: Add a new train to the system (admin only).
+# GET /trains?source=<source>&destination=<destination>: Retrieve trains between specified source and destination.
+Authentication
+bash
+
+# Secure API endpoints using JSON Web Tokens (JWT). Obtain a token via the /login endpoint.
+Testing
+bash
+
+# Use Postman or any API testing tool to send requests to the endpoints.
+# Include the appropriate headers (Content-Type and Authorization) with JWT token for authenticated requests.
+# Test each endpoint for expected behavior:
+# - User registration and login.
+# - Adding a new train (admin).
+# - Checking train availability.
+# - Booking a seat.
+# - Retrieving booking details.
+Deployment
+bash
+
+# Deploy the application to a cloud platform like AWS, Heroku, or Azure for production use.
+# Configure environment variables in your cloud provider's dashboard.
