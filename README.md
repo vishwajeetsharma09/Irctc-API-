@@ -1,92 +1,48 @@
-Railway Management System API
-Overview
-This API project simulates a railway management system similar to IRCTC, allowing users to register, login, manage trains, check seat availability, and book seats. It includes role-based access control with admin and user roles.
+# Railway Management System API
 
-Features
-User Management: Register and login functionalities.
-Admin Operations: Add new trains and update seat availability.
-User Actions: Check train availability, book seats, and view booking details.
-JWT Authentication: Secure API endpoints using JSON Web Tokens.
-MySQL Database: Store and manage train and user data efficiently.
-Concurrency Handling: Handle simultaneous booking requests to prevent overbooking.
-Tech Stack
-Node.js and Express.js: Backend server and routing framework.
-MySQL: Database management system for storing data.
-JWT (JSON Web Tokens): Authentication and authorization mechanism.
-dotenv: Environment variable management.
-Setup Instructions
-Prerequisites
-Node.js (version >= 12.x)
-MySQL database
-Installation
-Clone the repository:
+## Introduction
 
-bash
-Copy code
-git clone <repository_url>
-cd Irctc-API
-Install dependencies:
+Welcome to the Railway Management System API, a powerful backend solution designed to handle all aspects of managing trains, seat availability, and user interactions. This API provides seamless functionalities for user registration, authentication, booking management, and administrative operations.
 
-bash
-Copy code
-npm install
-Database Setup:
+## Features
 
-Create a MySQL database.
-Configure database connection details in a .env file:
-makefile
-Copy code
-DATABASE_HOST=localhost
-DATABASE_USER=root
-DATABASE_PASS=your_mysql_password
-DATABASE_NAME=irctc
-Run Migrations:
+### User Management
+- **Registration**: Allow users to register with the system.
+- **Authentication**: Secure login using JWT tokens.
 
-Use Knex CLI to run migrations:
-bash
-Copy code
-npx knex migrate:latest
-Environment Variables:
+### Admin Operations
+- **Train Management**: Add new trains and update seat availability.
+- **Authorization**: Protect admin routes with an API key for secure operations.
 
-Create a .env file in the root directory with the following variables:
-makefile
-Copy code
-DATABASE_HOST=localhost
-DATABASE_USER=root
-DATABASE_PASS=your_mysql_password
-DATABASE_NAME=irctc
-ACCESS_TOKEN_SECRET=your_access_token_secret
-API_KEY=your_api_key
-Start the Server:
+### Real-time Functionality
+- **Dynamic Updates**: Instant updates on train availability and bookings.
+- **Concurrency Handling**: Prevent overbooking with robust transaction management.
 
-bash
-Copy code
-npm start
-The server should now be running on http://localhost:3000.
+### Scalability and Reliability
+- **Performance**: Built to handle large traffic with MySQL database integration.
+- **Error Handling**: Ensure reliability with middleware and route-specific error management.
 
-API Endpoints
-POST /register: Register a new user.
-POST /login: Authenticate and receive a JWT token.
-POST /addtrain: Add a new train (admin access).
-GET /trains?source=<source>&destination=<destination>: Get trains between source and destination.
-POST /book: Book a seat on a train (authenticated users).
-GET /bookings: Get specific booking details (authenticated users).
-Authentication
-JWT Token: Secure API endpoints using JSON Web Tokens. Obtain a token via the /login endpoint.
-Testing
-Use Postman or any API testing tool to send requests to the endpoints.
-Include the appropriate headers (Content-Type and Authorization) with JWT token for authenticated requests.
-Test each endpoint for expected behavior:
-User registration and login.
-Adding a new train (admin).
-Checking train availability.
-Booking a seat.
-Retrieving booking details.
-Error Handling
-Proper error responses are sent for invalid requests or unauthorized access.
-Middleware and route-specific error handling ensure robust API behavior.
-Deployment
-Deploy the application to a cloud platform like AWS, Heroku, or Azure for production use.
-Configure environment variables in your cloud provider's dashboard.
-Contribution
-Contributions are welcome! Fork the repository, make your changes, and submit a pull request.
+### Integration Ease
+- **Simple API**: Straightforward endpoints for easy integration with frontend applications.
+
+## Technology Stack
+
+- **Node.js** and **Express.js**: Backend server and routing framework.
+- **MySQL**: Database management system for storing and managing data.
+- **JWT (JSON Web Tokens)**: Secure authentication and authorization mechanism.
+- **dotenv**: Secure environment variable management.
+
+## Setup Instructions
+
+### Prerequisites
+
+- Node.js (version >= 12.x)
+- MySQL database
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone <repository_url>
+   cd Itctc_API
+
